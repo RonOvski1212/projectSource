@@ -4,8 +4,8 @@ const gulp = require("gulp");
 const webpack = require("webpack-stream");
 const browsersync = require("browser-sync");
 
-// const dist = "./dist/";
-const dist = "/ospanel/domains/Test";
+const dist = "./dist/";
+// const dist = "/ospanel/domains/Test";
 
 gulp.task("copy-html", () => {
   return gulp
@@ -66,6 +66,7 @@ gulp.task("watch", () => {
     server: "./dist/",
     port: 4000,
     notify: true,
+    browser: "chrome",
   });
 
   gulp.watch("./src/index.html", gulp.parallel("copy-html"));
